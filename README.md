@@ -2,7 +2,7 @@
 
 > **Can DINOv2's internal attention signals predict its own reliability under adverse weather — at zero additional training cost?**
 
-This project investigates uncertainty quantification in Vision Foundation Models (VFMs), specifically DINOv2, applied to autonomous driving in snowy conditions using the **Canadian Adverse Driving Conditions (CADC)** dataset. It builds on the lineage of [BayesOD (ICRA 2020)](https://arxiv.org/abs/1903.12130) and [DINO_Teacher (CVPR 2025)](https://arxiv.org/abs/2409.09131), asking whether model-internal signals can replace expensive uncertainty heads or ensemble methods.
+This project investigates uncertainty quantification in Vision Foundation Models (VFMs), specifically DINOv2, applied to autonomous driving in snowy conditions using the **Canadian Adverse Driving Conditions (CADC)** dataset. It builds on the work of [BayesOD (ICRA 2020)](https://arxiv.org/abs/1903.12130) and [DINO_Teacher (CVPR 2025)](https://arxiv.org/abs/2409.09131), asking whether model-internal signals can replace expensive uncertainty heads or ensemble methods.
 
 ---
 
@@ -106,8 +106,6 @@ The notebook is organized into seven progressive phases:
 | **Phase 5** | 21–22 | Per-frame continuous snow density correlation, key result figure |
 | **Phase 6** | 23–26 | Reference bank construction, pseudo-label confidence, filtering experiment |
 | **Phase 7** | 27 | Literature-grounded uncertainty-aware pseudo-label weighting |
-
-> **Note on duplicates:** Cells 1 and 2 both load DINOv2 and import the same libraries. Cell 1 is an early inspection cell (it inspects the attention module type) and Cell 2 is the production setup with the QKV hook. Cell 3 defines the original signal functions; Cell 13 redefines `preprocess()` and introduces `compute_all_signals_v2()` (the cleaner version used from Phase 3 onward). These are intentional progressive refinements from iterative notebook development, not accidental duplicates — but they can be consolidated if converting to a clean script.
 
 ---
 
